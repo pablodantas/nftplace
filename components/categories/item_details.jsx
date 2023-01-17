@@ -68,7 +68,7 @@ const Item_details = () => {
               <div className="mb-3">
                 <div className="flex items-center whitespace-nowrap">
                   <span className=" dark:border-jacarta-600 border-jacarta-100 flex items-center whitespace-nowrap rounded-md py-1 px-2 -ml-1 mr-1">
-                    <img src="/images/logo_black.png" className="logo_money" />
+                    <img src="" className="logo_money" />
                   </span>
                   <span className="text-green text-lg font-medium leading-tight tracking-tight">
                     0 $TAP

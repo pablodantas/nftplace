@@ -111,13 +111,13 @@ const MyProfile = () => {
 							@{data?.nameUserLink}
 							</h3>
 							<div className="dark:bg-jacarta-700 dark:border-jacarta-600 border-jacarta-100 mb-8 inline-flex items-center justify-center rounded-full border bg-white py-1.5 px-4">
-								<Image
+								{/* <Image
 									src="/images/logo_black.png"
 									className=" inline-block h-6 w-6"
 									alt=""
 									height={15}
 									width={15}
-								/>
+								/> */}
 								<Tippy
 									hideOnClick={false}
 									content={copied ? <span>copied</span> : <span>copy</span>}

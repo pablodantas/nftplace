@@ -79,7 +79,7 @@ const BidsCarousel = () => {
 										</Link>
 										<span className="dark:border-jacarta-600 border-jacarta-100 flex items-center whitespace-nowrap rounded-md border py-1 px-2">
 											<Tippy content={<span>$TAP</span>}>
-												<img src="/images/logo_black.png" alt="" className="w-3 h-3 mr-1" />
+												<img src="" alt="" className="w-3 h-3 mr-1" />
 											</Tippy>
 
 											<span className="text-green text-sm font-medium tracking-tight">

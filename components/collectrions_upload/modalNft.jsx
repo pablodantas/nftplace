@@ -178,10 +178,10 @@ function ModalNft({ nft, keyModal, showElementNFT }) {
 
                       <div className="border-jacarta-100 gap-2 bg-jacarta-50 flex flex-1 items-center self-stretch border-r px-2">
                         <span>
-                          <img src="/images/logo_black.png" className="w-5" />
+                          <img src="" className="w-5" />
                         </span>
                         <span className="font-display text-jacarta-700 text-sm">
-                          $TAP
+                          
                         </span>
                       </div>
                     </div>

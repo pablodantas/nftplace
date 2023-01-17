@@ -48,7 +48,7 @@ const User_items = () => {
 											<svg className="icon mr-1 h-5 w-5 fill-current">
 												<use xlinkHref={`/icons.svg#icon-${icon}`}></use>
 											</svg>
-											<span className="font-display text-base font-medium">{text}</span>
+											<span className="font-display text-base font-medium">Free Minting</span>
 										</button>
 									</Tab>
 								);
