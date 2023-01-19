@@ -59,12 +59,52 @@ const Login = () => {
     }
   }
 
+  const handleMetaMask = async () => {
+    try {
+      setAuthError(null);
+      setIsAuthenticating(true);
+      // Enable web3 to get user address and chain
+      await enableWeb3({
+        throwOnError: true,
+        provider: "metamask",
+        chainId: 97,
+      });
+      const { account, chainId } = Moralis;
+      if (!account) {
+        throw new Error('Login Failed');
+      }
+      if (!chainId) {
+        throw new Error('Login Failed');
+      }
+      if (!isAuthenticated && account && chainId) {
+        const chainId = parseInt(97)
+        //chainId must match the testnet/mainnet of the web3auth clientId's project settings or the login won't work
+        // Get message to sign from the auth api
+        const { message } = await Moralis.Cloud.run('requestMessage', {
+          address: account,
+          chain: 97,
+          network: 'evm',
+        });
+        await authenticate({
+          signingMessage: message,
+          throwOnError: true,
+          provider: "metamask",
+          chainId: 97,
+        })
+      }
+    } catch (error) {
+      setAuthError(error);
+    } finally {
+      setIsAuthenticating(false);
+    }
+  }
+
   const Router = useRouter();
-	useEffect(() => {
-		if (user) {
-			Router.push('/')
-		}
-	},[user]);
+  useEffect(() => {
+    if (user) {
+      Router.push('/')
+    }
+  }, [user]);
 
 
   return (
@@ -98,6 +138,17 @@ const Login = () => {
                 <TabPanel>
                   <div className="tab-pane fade show active">
                     <button className="js-wallet bg-accent hover:bg-accent-dark mb-4 flex w-full items-center justify-center rounded border-2 border-transparent py-4 px-8 text-center font-semibold text-white transition-all"
+                      onClick={() => handleMetaMask()}>
+                      {/* <Image
+                        src="/images/tap_2.png"
+                        className=" inline-block h-6 w-6"
+                        alt=""
+                        height={27}
+                        width={27}
+                      /> */}
+                      <span className="ml-2.5">Login MetaMask</span>
+                    </button>
+                    <button className="js-wallet bg-accent hover:bg-accent-dark mb-4 flex w-full items-center justify-center rounded border-2 border-transparent py-4 px-8 text-center font-semibold text-white transition-all"
                       onClick={() => handleLogin()}>
                       {/* <Image
                         src="/images/tap_2.png"
@@ -106,7 +157,7 @@ const Login = () => {
                         height={27}
                         width={27}
                       /> */}
-                      <span className="ml-2.5">Login</span>
+                      <span className="ml-2.5">Login WalletConnect</span>
                     </button>
                   </div>
                 </TabPanel>

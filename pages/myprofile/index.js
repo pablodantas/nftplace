@@ -41,6 +41,7 @@ const MyProfile = () => {
 
 	const [quantitySeguindo, setQuantitySeguindo] = useState("");
 	const [quantitySeguidores, setquantitySeguidores] = useState("");
+	const [quantityPublications, setQuantityPublications] = useState("");
 
 	useEffect(() => {
 		async function seguindo() {
@@ -64,6 +65,18 @@ const MyProfile = () => {
 			}
 		}
 		seguidores()
+	}, [walletAddress]);
+
+	useEffect(() => {
+		async function publication() {
+			if (walletAddress) {
+				const query = new Moralis.Query(`FreeMinting`);
+				query.equalTo("owner", walletAddress.toLowerCase());
+				const likes = await query.find();
+				setQuantityPublications(likes.length);
+			}
+		}
+		publication()
 	}, [walletAddress]);
 
 
@@ -135,7 +148,7 @@ const MyProfile = () => {
 								<div className="dark:bg-jacarta-800 dark:border-jacarta-600 border-jacarta-100 mb-8 inline-flex flex-wrap items-center justify-center rounded-xl border bg-white mt-5">
 									<div className="border-resp_none dark:border-jacarta-600 border-jacarta-100 w-1/2 rounded-l-xl border-r py-4 hover:shadow-md sm:w-32">
 										<div className="text-jacarta-700 mb-1 text-base font-bold dark:text-white">
-											<p>0</p>
+											<p>{quantityPublications}</p>
 										</div>
 										<div className="text-2xs dark:text-jacarta-400 font-medium tracking-tight">
 											<p>publications</p>

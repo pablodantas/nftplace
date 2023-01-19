@@ -13,7 +13,7 @@ const Explore_collection_item = () => {
   const { Moralis } = useMoralis();
 
   const [page, setPage] = useState(1);
-  const [pageSize, setPageSize] = useState(4);
+  const [pageSize, setPageSize] = useState(8);
   const [item, setItem] = useState([]);
 
   const fetchItem = async () => {
@@ -39,7 +39,7 @@ const Explore_collection_item = () => {
   }, [data]);
 
   const fetchData = () => {
-    setPageSize(pageSize + 1);
+    setPageSize(pageSize + 4);
   };
 
   return (

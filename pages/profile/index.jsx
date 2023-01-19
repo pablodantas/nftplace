@@ -236,7 +236,6 @@ const Edit_user = () => {
                       Username<span className="text-red">*</span>
                     </label>
                     <div className="relative">
-                      <img src="images/logo_black.png" alt="" className="w-5 absolute top-1/2 left-4 -translate-y-1/2" />
                       <input
                         type="text"
                         id="profile-username"
@@ -296,7 +295,7 @@ const Edit_user = () => {
                         type="text"
                         id="profile-twitter"
                         className="dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-t-lg py-3 pl-10 hover:ring-2 focus:ring-inset dark:text-white"
-                        placeholder="@twittername"
+                        placeholder="@twitter"
                         onChange={(e) => setTwitter(e.target.value)}
                       />
                     </div>
@@ -317,7 +316,7 @@ const Edit_user = () => {
                         type="url"
                         id="profile-website"
                         className="dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:placeholder:text-jacarta-300 -mt-px w-full rounded-b-lg py-3 pl-10 hover:ring-2 focus:ring-inset dark:text-white"
-                        placeholder="@instagramname"
+                        placeholder="@instagram"
                         onChange={(e) => setInstagram(e.target.value)}
                       />
                     </div>
