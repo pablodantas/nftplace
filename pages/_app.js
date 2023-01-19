@@ -1,5 +1,5 @@
 import '../styles/globals.css';
-import { ThemeProvider } from 'next-themes';
+import { ThemeProvider, useTheme } from 'next-themes';
 import Layout from '../components/layout';
 import { Provider } from 'react-redux';
 import { store } from '../redux/store';
@@ -17,7 +17,6 @@ MoralisV1.initialize('001');
 MoralisV1.serverURL = 'https://nftappnewman.herokuapp.com/server';
 
 function MyApp({ Component, pageProps }) {	
-
 	const router = useRouter();
 	const pid = router.asPath;
 	const scrollRef = useRef({
@@ -30,7 +29,7 @@ function MyApp({ Component, pageProps }) {
 			<MoralisProvider appId={'001'} serverUrl={'https://nftappnewman.herokuapp.com/server'}>
 				<QueryClientProvider client={queryClient} >
 					<Provider store={store}>
-						<ThemeProvider enableSystem={true} attribute="class">
+						<ThemeProvider  themes={['xhibiter']} enableSystem={false} defaultTheme={'dark'}  attribute="class">
 							<MetaMaskProvider>
 								<UserContext.Provider value={{ scrollRef: scrollRef }}>
 									{pid === '/login' ? (
