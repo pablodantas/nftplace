@@ -60,7 +60,7 @@ const Explore_collection_item_buy = () => {
         <div className="flex mk_gap">
           {item.map((item, index) => (
             <article key={index}>
-              {console.log("item", item)}
+              {/* {console.log("item", item)} */}
               <div className="relative dark:bg-jacarta-700 dark:border-jacarta-700 border-jacarta-100 height_nft_card rounded-2xl border bg-white p-[1.1875rem] transition-shadow">
                 <Link href={`/${item?.nftContract}/${item?.tokenId}`}>
                   <a className="flex space-x-[0.625rem]">

@@ -24,7 +24,7 @@ const Item = () => {
 
   const router = useRouter();
   const contract = router.query;
-  console.log(contract);
+  // console.log(contract);
 
   const [tabsActive, setTabsActive] = useState(1);
 
@@ -47,7 +47,7 @@ const Item = () => {
     //cacheTime: 111120000,
   })
 
-  console.log(data)
+  // console.log(data)
 
   useEffect(() => {
     if (data) {

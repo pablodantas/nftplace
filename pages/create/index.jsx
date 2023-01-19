@@ -31,7 +31,7 @@ const Create = () => {
       setSelectedFile(URL.createObjectURL(img));
       const file1 = await base64IPFS(img);
       const file1url = await MoralisIPFS(img.type, file1);
-      console.log(file1url)
+      // console.log(file1url)
       setFile(file1url);
     }
   };

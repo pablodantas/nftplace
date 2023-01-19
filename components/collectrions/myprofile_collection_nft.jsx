@@ -54,7 +54,6 @@ const My_collection_item_nft = () => {
         <div className="flex mk_gap">
         {item.map((item, index) =>
           <article key={index}>
-            {console.log(item)}
             <div className="relative dark:bg-jacarta-700 dark:border-jacarta-700 border-jacarta-100 height_nft_card rounded-2xl border bg-white p-[1.1875rem] transition-shadow">
               <Link href={`/${item?.objectId}`}>
                 <a className="flex space-x-[0.625rem]">

@@ -22,7 +22,7 @@ const My_collection_item_nftBlockChain = () => {
 
   const walletAddress = user?.attributes?.ethAddress;
 
-  console.log(walletAddress);
+  // console.log(walletAddress);
 
   const fetchItem = async () => {
     const toSkip = (page - 1) * pageSize;
@@ -35,7 +35,7 @@ const My_collection_item_nftBlockChain = () => {
     };
 
     const respost = axios.request(options).then(function (response) {
-      console.log(response.data)
+      // console.log(response.data)
       return response.data
     })
       .catch(function (error) {
@@ -72,7 +72,6 @@ const My_collection_item_nftBlockChain = () => {
         <div className="flex mk_gap">
         {item.map((item, index) =>
           <article key={index}>
-            {console.log(item)}
             <div className="relative dark:bg-jacarta-700 dark:border-jacarta-700 border-jacarta-100 height_nft_card rounded-2xl border bg-white p-[1.1875rem] transition-shadow">
               <Link href={`/${item?.address}/${item?.tokenId}`}>
                 <a className="flex space-x-[0.625rem]">

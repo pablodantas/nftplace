@@ -55,7 +55,7 @@ const Explore_collection_item = () => {
         <div className="mk_gap flex">
           {item.map((item, index) =>
             <article key={index}>
-              {console.log(item)}
+              {/* {console.log(item)} */}
               <div className="relative dark:bg-jacarta-700 dark:border-jacarta-700 border-jacarta-100 height_nft_card rounded-2xl border bg-white p-[1.1875rem] transition-shadow">
                 <Link href={`/user/${item?.owner}`}>
                   <a className="mr-2 shrink-0 user_img_card">

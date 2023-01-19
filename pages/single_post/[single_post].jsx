@@ -12,7 +12,7 @@ const Single_post = () => {
 	const router = useRouter();
 	const pid = router.query.single_post;
 
-	console.log(pid);
+	// console.log(pid);
 
 	return (
 		<>
