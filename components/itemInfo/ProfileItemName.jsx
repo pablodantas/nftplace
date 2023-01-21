@@ -18,7 +18,7 @@ function ProfileItemName({ address }) {
 		return b;
 	}
 
-	const { data } = useQuery(`fetchItemAvatar${addressId}`, fetchItemMan, {
+	const { data } = useQuery(`MoralisfetchProfileAvatar${addressId}`, fetchItemMan, {
 		staleTime: 1000 * 1,
 	})
 

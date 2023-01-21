@@ -15,12 +15,12 @@ function ProfileItem({ address }) {
 		const query = new Moralis.Query("IfUser");
 		query.equalTo("postOwner", addressId);
 		const result = await query.find();
-		const a = JSON.parse(JSON.stringify(result))
+		const a = JSON.parse(JSON.stringify(result));
 		const b = a[0];
 		return b;
 	}
 
-	const { data } = useQuery(`fetchItemAvatar${addressId}`, fetchItemMan, {
+	const { data } = useQuery(`MoralisfetchProfileAvatar${addressId}`, fetchItemMan, {
 		staleTime: 1000 * 1,
 	})
 

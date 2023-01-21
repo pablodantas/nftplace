@@ -46,11 +46,12 @@ const Create = () => {
     }
     await newPost.save();
 
-    setFile('');
+    setFile();
     setName('');
     setDescription('');
     setSelectedFile('');
     setPreleorder(false);
+    window.location.reload();
   }
 
   const onImageClick = () => {

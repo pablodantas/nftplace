@@ -67,7 +67,6 @@ const Edit_user = () => {
     //cacheTime: 111120000,
   });
 
-  // console.log(data);
 
   useEffect(() => {
     if (data) {
